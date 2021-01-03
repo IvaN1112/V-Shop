@@ -1,0 +1,789 @@
+/* 
+====================
+Fonts
+====================
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Catamaran:400,700|Grand+Hotel");
+
+/*
+==============
+Variables
+==============
+*/
+
+:root {
+  --clr-primary: #678e3e;
+  --clr-primary-light: #beed8c;
+  --clr-grey-1: #102a42;
+  --clr-grey-5: #617d98;
+  --clr-grey-10: #f1f5f8;
+  --clr-white: #fff;
+  --ff-primary: "Catamaran", sans-serif;
+  --ff-secondary: "Grand Hotel", cursive;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+}
+
+/* getting rid of default browser styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+we are going to develop the mobile version of our website first 
+as it is easier to go responsive from mobile to desktop than desktop to mobile so the inital values that we set our elements to will be for mobile and later on we use media queries to adjust them to bigger screen sizes */
+
+body {
+  font-family: var(--ff-primary);
+  background: var(--clr-white);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  display: block;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+/* More global CSS */
+
+.btn {
+  text-transform: uppercase;
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  padding: 0.375rem 0.75rem;
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  color: var(--clr-primary);
+  background: var(--clr-primary-light);
+}
+.clearfix::before, /* we are only interested in elements that are going to follow so there is no need for the before but there it is no issue adding it just for kicks */
+.clearfix::after {
+  content: "";
+  clear: both; /* when it is floated to the left(by default) make it so the float is ignored and elements appear below it, as usual, we can also set it to display both just so if we have any content before it it is also cleared and appears but on top of it as it would be positioned below it in this case */
+  display: table; /* prevents margins from collapsing
+  Here is an awesome article about it.
+  https://fuseinteractive.ca/blog/understanding-humble-clearfix#.V6H_p2Wof6s */
+}
+
+.section-center {
+  width: 85vw;
+  max-width: 1170px;
+  padding: 2rem 0;
+  margin: 0 auto;
+}
+
+.section-title {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .section-center {
+    width: 95vw;
+    padding: 4rem 1rem;
+  }
+}
+
+.section-center h3,
+.services h3 {
+  font-family: var(--ff-secondary);
+  color: var(--clr-primary);
+}
+
+/* 
+=============
+Animation
+=============
+*/
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-200px);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateX(50px);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(200px);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateX(-50px);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  0% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 
+=============
+Header
+=============
+*/
+
+.header {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../images/main-bcg.jpg") center/cover no-repeat;
+  position: relative;
+  /* animation */
+  overflow-x: hidden; /* twe add it so that the content that we translate  in order to hide our banner headings in the beginning of their animations does not create a "left-right" scrollbar at the bottom of the page */
+}
+
+.banner {
+  text-align: center;
+  position: absolute; /* Centers it realtive to the screen */
+  top: 50%; /* 50% from the top screen edge */
+  left: 50%; /* 50% from the left screen edge */
+  transform: translate(-50%, -50%);
+  /* 
+  the header takes 100% of the viewport
+  the banner is positioned relative to it
+  so 50% top and 50% left would make the element's left edge start from the center of the screen which actually makes it expand to the bottom right from there as this is how html elements grow so to switch it so that its center is in the middle we would have to use translate function which positions it relative to the x and y axis taking the elements width sizes as measure when using % unit.
+  So when we position it -50% top it is positioned in the middle right of the screen so this middle of the screen matches with the elements middle line that we can draw through it and when we also put left to -50% the element's center will also be at the center of the screen from where before adding the translate function the elements left edge would have started 
+  */
+}
+
+.banner h2 {
+  font-family: var(--ff-secondary);
+  color: var(--clr-primary);
+  /* animation */
+  animation: slideFromRight 5s ease-in-out 1;
+}
+
+.banner h1 {
+  text-transform: uppercase;
+  color: var(--clr-white);
+  margin-top: 1.25rem;
+  margin-bottom: 2rem;
+  /* animation */
+  animation: slideFromLeft 5s ease-in-out 1;
+}
+
+.banner-btn {
+  outline: 0.125rem solid var(--clr-primary);
+  outline-offset: 0.25rem; /* so that the outline goes outside the box and is visible */
+  font-size: 1.25rem;
+  padding: 1rem 1.75rem;
+  /* animation */
+  animation: show 5s linear 1;
+}
+
+.content-divider {
+  height: 0.5rem;
+  background: linear-gradient(
+    to left,
+    var(--clr-primary),
+    #e9b949,
+    var(--clr-primary)
+  );
+}
+
+/* 
+=============
+Skills
+=============
+*/
+
+.skills {
+  transition: none;
+  background: var(--clr-grey-10);
+}
+
+.skill {
+  padding: 2.5rem 0;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.skill-icon {
+  font-size: 2.5rem; /* increase size of the icon */
+  margin-bottom: 1.25rem;
+  transition: var(--transition);
+  /* adding it as we are going to lift up the icon a bit by adding translate so we have the transition(change of styles over time) already set up */
+  display: inline-block; /* as we need margin bottom applied and the span element it is in by default is an inline one and cannot have margin top,bottom, width and height changed */
+  color: var(--clr-primary);
+}
+
+.skill-text {
+  color: var(--clr-grey-5);
+  max-width: 17rem; /* here we change the width of the p block to 17 rem which decreases its size so even if it is a block element it now only takes up 17 rem of the screen width and is positioned in the left of the screen as this is the default position elements start from */
+  margin: 0 auto; /* in order to center the text again, we add the margin for left and right to auto so the left and right distance from the elements box until the edge of the screen are equal making it centered */
+}
+
+.skill:hover {
+  background: var(--clr-white);
+  box-shadow: 0 4px var(--clr-primary);
+}
+
+.skill:hover .skill-icon {
+  /* this means as I'm hovering over the skill, what should happen to the skill icon */
+  transform: translateY(-5px);
+}
+
+/* responsive layout - articles are display block by default so they take up 100% of the screen so we also need to change that */
+
+/* two columns */
+
+@media screen and (min-width: 576px) {
+  .skill {
+    float: left;
+    width: 50%;
+  }
+} /* for some reason the background color diappears and this is fixed by a clearfix which I would need to add later on and check how it actually does it */
+
+@media screen and (min-width: 1200px) {
+  .skill {
+    float: left;
+    width: 25%;
+  }
+}
+
+/* 
+=============
+About
+=============
+*/
+
+.about-img, /* for some reason this rule made me realise that padding do not collapse but are added to eachother so padding top of one element that has 1 rem and padding bottom of the element above it that also has a margin but for bottom of 1 rem - both have 2 rem padding collectively */
+.about-info {
+  padding: 1rem 0;
+}
+
+.about-picture-container {
+  max-width: 30rem;
+  border: 0.5rem solid var(--clr-primary);
+  background: var(--clr-primary);
+  overflow: hidden; /* so the scale animation works as a zoom */
+}
+
+.about-picture {
+  transition: var(--transition);
+}
+
+.about-picture:hover {
+  opacity: 0.5;
+  transform: scale(1.2);
+}
+
+.about-info p {
+  max-width: 30rem;
+  color: var(--clr-grey-5);
+}
+
+@media screen and (min-width: 950px) {
+  .about-img,
+  .about-info {
+    float: left;
+    width: 50%;
+  }
+  .about-img {
+    padding-right: 2rem;
+  } /* We do not use margin to make the elements farther from eachother as they take up 100 of the screen and if we do so they will take up more than 100% and the second one will move to the next row. Thanks to padding and most importantly box-sizing: border box we avoid that as when we add padding to an element with box-sizing: border-box the padding(which is the distance between the content and the edge of the box) is subtracted from width of the element that it already has(50% in our case) so the padding-right is added and the content itself(the image and its size in our case) is 50% - the padding we added so its overall size is still 50%, so is the other elements size. Therefore, the value of both elements does not go above 100%(it is exactly 100%) and the second one does not go on the next row */
+}
+
+/* 
+=============
+Products
+=============
+*/
+
+.products {
+  background: var(--clr-grey-10);
+}
+
+.products article {
+  padding: 2rem 0; /* as we have not set a specific height for the box it will grow downwards when we add padding to them even though we are using box-sizing:border box */
+}
+
+.product-text {
+  color: var(--clr-grey-5);
+  max-width: 26rem;
+}
+
+.product {
+  margin-bottom: 2rem;
+}
+
+.product-img {
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+  height: 17rem;
+  object-fit: cover; /* used to make the image cover the whole size of the div but also remains its original proportions which actually makes some part of the image be cut out if we edit its original width and height */
+}
+
+.product-price {
+  color: var(--clr-primary);
+}
+
+/* from this width start larger screen sizes(AFTER 768px, so UP TO 768px are the inital styles that we set for our page - as we build it mobile first */
+@media screen and (min-width: 768px) {
+  .product {
+    float: left;
+    width: 50%;
+    padding-right: 2rem;
+  }
+}
+
+/* from this width start next larger type of devices(992px), the previous style such as float and padding are already applied from the previous media query so there is no need to type them again */
+@media screen and (min-width: 992px) {
+  .product {
+    width: 33.3%;
+  }
+}
+
+/* next largest screen width - 1200px */
+@media screen and (min-width: 1200px) {
+  .products-info {
+    float: left;
+    width: 30%;
+  }
+  .products-inventory {
+    float: left;
+    width: 70%;
+  }
+  .product {
+    margin-bottom: 0;
+    padding: 0 1rem;
+  }
+}
+
+/* after 84 years I made it work and I am glad I solved it, a good tool that helped me find the differences is the text compare site which compared my code to the original one and I saw there was some mistakes I made when targetting the classes in the media query, bookmarked the text/code compare site, probably gonna use it quite a lot in the future when learning new stuff and do not know where the difference between my code and the teacher's is */
+
+/* 
+=============
+Header
+=============
+*/
+
+.services .section-title {
+  margin-top: 3rem;
+  margin-bottom: -2.7rem;
+  text-align: center;
+}
+
+.service-card {
+  border-radius: var(--radius);
+  background-color: var(--clr-grey-10);
+  margin: 2rem 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+.service-img {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  height: 17rem;
+  object-fit: cover; /* The replaced content is sized to maintain its aspect ratio while filling the element’s entire content box. */
+}
+
+.service-img-container {
+  position: relative;
+}
+
+.service-icon {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  font-size: 1.5rem;
+  color: var(--clr-primary);
+  background: var(--clr-primary-light);
+  padding: 0.375rem 0.75rem;
+  border-radius: 50%;
+  transform: translate(
+    -50%,
+    50%
+  ); /* so that it starts in a way its middle center is in the middle of the bottom of the image */
+  border: 5px solid var(--clr-grey-10);
+}
+
+.service-info {
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+}
+
+.service-info p {
+  max-width: 20rem;
+  margin: 0 auto 1rem auto;
+}
+
+.service-btn {
+  border-radius: var(--radius);
+  font-size: 0.775rem;
+  padding: 0.375rem 0.675rem;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+@media screen and (min-width: 762px) {
+  /* Here we are going to set up distance between cards using margin - when we set their width in the query we leave some % of it to add the margin between elements */
+  .service-card {
+    /*Here we use 45% for the width of the elements and leave 5 for 5% padding right for the 2 elements in our row */
+    float: left;
+    width: 45%;
+    margin-right: 5%;
+  }
+  .services .section-center article:last-of-type {
+    margin-bottom: 0;
+  }
+  .service-icon {
+    font-size: 1.75rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .service-card {
+    /* 30% for the three elements and 3.333% for their padding right so in total they take up 99.999% of the width of the section of which they are children and constitute its whole size */
+    float: left;
+    width: 30%;
+    margin-right: 3.33%;
+  }
+  .services .section-center article {
+    margin-bottom: 0;
+  }
+  .service-icon {
+    font-size: 2rem;
+  }
+}
+
+/* 
+=============
+Contact
+=============
+*/
+
+.contact {
+  background-color: var(--clr-grey-10);
+}
+
+.contact-text {
+  letter-spacing: 1px;
+}
+
+.contact-info,
+.contact-form {
+  margin: 1rem 0; /* margins collapse but paddings do not meaning that paddings are added to eachother and their size is calculated by by adding for example the bottom and top padding of neighboring elements while margin applies the larger margin as the distance between elements */
+}
+
+.contact-tile {
+  color: var(--clr-primary);
+}
+
+.contact-item {
+  margin: 1.5rem 0;
+}
+
+.contact-form {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  text-align: center;
+  max-width: 35rem;
+}
+
+.contact-form h3 {
+  color: var(--clr-grey-5);
+  font-family: var(--ff-primary);
+  font-weight: 700;
+  padding-top: 1.25rem;
+}
+
+.contact-form:hover {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  padding: 1rem 1.5rem; /* if the elements cannot fit the area they are supposed to with the padding added and if the border-box property is set to border-box, the elements will go to the next row in order not to change the original size of the box */
+  padding-bottom: -200rem;
+}
+
+.form-control {
+  display: block; /* so they start on a new line take the space of a whole row */
+  width: 100%; /* keep in mind that only the content itself is 100%, there is padding added to the element which pushes the content inside of the box a little so the CONTENT does not occupy 100% of the width of the BOX */
+  border-radius: var(--radius);
+  border: none;
+  background: var(--clr-grey-10);
+  letter-spacing: var(--spacing);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  padding: 0.75rem 1rem;
+}
+
+.form-control::placeholder {
+  /* in some browsers the placeholders are not inheriting the values from the body global styles(this was my case actually, so it is better for us to explicitly target the placeholder and style it */
+  font-family: var(--ff-primary);
+  color: var(--clr-grey-1);
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+}
+
+.submit-btn {
+  display: inline-block;
+  width: 100%;
+  border-bottom-left-radius: var(
+    --radius
+  ); /* we do this as the button is taking 100% of the width of the form so it covers the bottom borders and we have to set them specifically for the bottom left and right borders of the button in order to get the desired styling */
+  border-bottom-right-radius: var(--radius);
+  padding: 1rem; /* the padding in the left and right is applied but as the element is already taking up 100% of the width and its text is centered the padding left and right will not take effect until it is big enough to reach the text inside element when it will actually move the text itself to the left if the padding right is enough to reach it or right if the padding left is enough*/
+}
+
+@media screen and (min-width: 500px) {
+  /* so that the contact info is more to the center of the screen for smaller devices and also for bigger devices when we switch to two column layout(as the style persists for bigger screen sizes as well unless it is overwritten by the same rule but with a different value */
+  .contact-info {
+    padding-left: 100px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .contact-info,
+  .contact-form {
+    float: left;
+    width: 50%;
+  }
+}
+
+/* 
+=============
+Footer
+=============
+*/
+
+.footer {
+  background: #222;
+  text-align: center;
+}
+
+.social-icon {
+  color: var(--clr-white);
+  font-size: 1.5rem;
+  margin-right: 1rem; /* we can achieve the same distance between icons with padding-right but it will not be syntactically correct as we would insrease the distance from the content to the edge of the box they are in (a element in our case - they contain the icon and their width and height are constituted only of the icon's or any other text or content that is inside of it - by the way, any elements added INSIDE the a tag will act as a link meaning they will link to the specified location in the href attribute and any of the a's inner content would have the cursor property set to a value pointer meaning that when one hovers over it, it will also have the pointer cursor). The correct way to to that would be by adding a margin-right instead of padding-right which would increase the distance between the a elements instead. */
+  transition: var(--transition);
+}
+.social-icon:hover {
+  color: var(--clr-primary);
+}
+
+.footer-text {
+  color: var(--clr-white);
+  margin-top: 1.25rem;
+  text-transform: uppercase;
+}
+
+.company {
+  color: var(--clr-primary);
+}
+
+/* 
+=============
+Navbar
+=============
+*/
+
+/* button */
+.nav-btn {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  font-size: 2.5rem;
+  color: var(--clr-primary);
+  z-index: 1; /* so that it displays over other elements which by default have a z index of 0, so if we change it to a value higher than 0 it would be displayed over them */
+  cursor: pointer;
+  animation: bounce 2s ease infinite;
+}
+
+/* actually navigation styling */
+
+.navbar {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; /* these four rules make the element span across the whole screen and remain fixed to it so even if the user scrolls only this element would be displayed we can achieve the same effect by removing the right and bottom properties and leave only the ones that position the actual content of the elements, then add the poperties and values width: 100% and height:100%, this would achive the same effect as the mentioned above */
+  background: var(--clr-grey-10);
+  box-shadow: 2px 0 2px rgba(0, 0, 0, 0.2); /* this would be visible on bigger screens and make the navbar more disinct */
+  /* hide nav */
+  transform: translateX(
+    -100%
+  ); /* we do this so the navbar is hidden when the user initially opens the page, we do it by moving it -100% along the x axis making it go out of the viewable space of the display and only when the navbar button is clicked the showNav class is applied dynamically via js, bringing the navbar back */
+  transition: var(--transition);
+}
+
+.showNav {
+  transform: translateX(
+    0
+  ); /* moves the navbar to 0 on the x axis, it was -100% previously so when we move it 0 we basically bring it 100% right - to the x axis - where it is fully visible */
+}
+
+.navbar-header {
+  text-align: right;
+  padding-right: 1rem;
+}
+
+.nav-close {
+  font-size: 2rem;
+  color: #f29c9c;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.nav-close:hover {
+  color: #bb2525;
+}
+
+.nav-items {
+  list-style-type: none;
+}
+
+/* we target the links, not the list items, as we would style the whole list items if we chose it and this is not what we wish, we simply wish to style the links INSIDE of them, EVEN though there are not any other elements, more on that later */
+.nav-link {
+  display: block; /* by default a elements are inline but we set them to block so their content and what is right of it the spans up to the rows end, even if it is only whitespace, it occupies the whole row */
+  font-size: 2.5rem;
+  padding: 0.25rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+  color: var(--clr-grey-5);
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  background: var(--clr-primary-light);
+  color: var(--clr-primary);
+  padding-left: 1.5rem;
+  border-left: 0.25rem solid var(--clr-primary);
+}
+
+@media screen and (min-width: 768px) {
+  /* here we set the width to be 33% of the viewport width(the width of the display of the device the site is being viewed on) and it grows until those % relative to the screen size become up to 20rem */
+  .navbar {
+    width: 33vw;
+    max-width: 20rem;
+  }
+}

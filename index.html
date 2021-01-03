@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tea Station || Home</title>
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="./fontawesome-free-5.12.1-web/css/all.min.css"
+    />
+    <!-- custom css -->
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <!-- Navbar setup -->
+    <!-- nav button -->
+    <span class="nav-btn" id="nav-btn">
+      <i class="fas fa-bars"></i>
+    </span>
+    <!-- Navbar start -->
+    <nav class="navbar" id="navbar">
+      <div class="navbar-header">
+        <!-- we add the div as it is a block level element and the icon would take the whole width of the row, then we can align it to the right easily with text-align: right as it accepts such properties-->
+        <span class="nav-close" id="nav-close">
+          <i class="fas fa-times"></i>
+        </span>
+      </div>
+      <ul class="nav-items">
+        <li><a href="#header" class="nav-link">Начало</a></li>
+        <li><a href="#skills" class="nav-link">Стоки</a></li>
+        <li><a href="#about" class="nav-link">За нас</a></li>
+        <li><a href="#products" class="nav-link">Оферти</a></li>
+      </ul>
+    </nav>
+    <!-- end of navbar -->
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="banner">
+        <h2>Магазинът за всичко - V-Shop - изборът е ваш</h2>
+        <h1>
+          Правим всичко с любов <br />
+          От 21 години
+        </h1>
+        <a href="skills.html" class="btn banner-btn"> Услуги </a>
+      </div>
+    </header>
+    <!-- End of header -->
+
+    <div class="content-divider"></div>
+
+    <!-- Skills section -->
+    <section class="skills clearfix" id="skills">
+      <!-- Single skill -->
+      <article class="skill">
+        <span class="skill-icon">
+          <i class="fas fa-mug-hot"></i>
+        </span>
+        <h4 class="skill-title">всякакви напитки</h4>
+        <p class="skill-text">
+          Имаме всичко необходимо за да утолим жаждата ви!
+        </p>
+      </article>
+      <!-- End of single skill -->
+
+      <!-- Single skill -->
+      <article class="skill">
+        <span class="skill-icon">
+          <i class="fas fa-book"></i>
+        </span>
+        <h4 class="skill-title">Релакс</h4>
+        <p class="skill-text">
+          Чете ви се интересна книга? Тук ще намерите всякакви жанрове +
+          учебници.
+        </p>
+      </article>
+      <!-- End of single skill -->
+
+      <!-- Single skill -->
+      <article class="skill">
+        <span class="skill-icon">
+          <i class="fas fa-gamepad"></i>
+        </span>
+        <h4 class="skill-title">Електронни развлечения</h4>
+        <p class="skill-text">
+          Тук ще намерите всякакви играчки и електронни игри - включително и
+          конзоли.
+        </p>
+      </article>
+      <!-- End of single skill -->
+
+      <!-- Single skill -->
+      <article class="skill">
+        <span class="skill-icon">
+          <i class="fas fa-mortar-pestle"></i>
+        </span>
+        <h4 class="skill-title">уреди за дома</h4>
+        <p class="skill-text">
+          Всичко от порцеланови комплекти със съдове, ножове, прибори до фурни и
+          мебели.
+        </p>
+      </article>
+      <!-- End of single skill -->
+    </section>
+    <!-- End of Skills section -->
+
+    <!-- About -->
+    <section id="about">
+      <div class="section-center clearfix">
+        <!-- about img -->
+        <article class="about-img">
+          <div class="about-picture-container">
+            <img
+              src="./images/about-bcg.jpeg"
+              alt="tea kettle"
+              class="about-picture"
+            />
+          </div>
+        </article>
+        <!-- about info -->
+        <article class="about-info">
+          <!-- section title -->
+          <div class="section-title">
+            <h3>Относно нашият</h3>
+            <h2>Любим Магазин</h2>
+          </div>
+          <!-- end of section title -->
+          <p class="about-text">
+            Създадохме го през 1999 година като малко гаражно магазинче за
+            домашен кашкавал в един квартал в Сливен. Днес V-Shop e един от
+            водещите лидери в предлагане на стока.
+          </p>
+          <p class="about-text">
+            При нас можете буквално да намерите от пиле(и живо имаме) мляко(във
+            всякакви форми и вариации) на достъпни цени. Може да разгледате
+            нашите месечни брошури по телевизионните реклами.
+          </p>
+          <a href="about.html" class="btn">learn more</a>
+        </article>
+      </div>
+    </section>
+    <!-- End of about -->
+
+    <!-- products-->
+    <section class="products" id="products">
+      <div class="section-center clearfix">
+        <!-- products info -->
+        <article class="products-info">
+          <!-- section title -->
+          <div class="section-title">
+            <h3>Хвърлете око</h3>
+            <h2>На нашите продукти</h2>
+          </div>
+          <!-- end of section title -->
+          <p class="product-text">
+            При нас можете да намерите всякакви видове продукти от изброените
+            по-горе. Може да се каже, че имаме почти всичко, освен числата от
+            тотото.
+          </p>
+          <a href="products.html" class="btn">inventory</a>
+        </article>
+        <!-- products inventory -->
+        <article class="products-inventory clearfix">
+          <!-- single product -->
+          <div class="product">
+            <img
+              src="./images/product-1.jpeg"
+              alt="single product"
+              class="product-img"
+            />
+            <h4 class="product-title">Био зелен чай</h4>
+            <h4 class="product-price">6.99 лв.</h4>
+          </div>
+          <!-- end of single product -->
+          <!-- single product -->
+          <div class="product">
+            <img
+              src="./images/product-2.jpeg"
+              alt="single product"
+              class="product-img"
+            />
+            <h4 class="product-title">Интересни Книги</h4>
+            <h4 class="product-price">15.99 лв.</h4>
+          </div>
+          <!-- end of single product -->
+          <!-- single product -->
+          <div class="product">
+            <img
+              src="./images/product-3.jpeg"
+              alt="single product"
+              class="product-img"
+            />
+            <h4 class="product-title">Защита от Корона</h4>
+            <h4 class="product-price">126.99 лв.</h4>
+          </div>
+          <!-- end of single product -->
+        </article>
+      </div>
+    </section>
+    <!-- end of products -->
+
+    <!-- services -->
+    <section class="services">
+      <!-- section title -->
+      <div class="section-title services-title">
+        <h3>Kaчеството за нас</h3>
+        <h2>Е на първо място</h2>
+      </div>
+      <!-- end of section title -->
+      <div class="section-center clearfix">
+        <!-- single card -->
+        <article class="service-card">
+          <!-- img container - img and icon need to be in the same container as the icon is going to be styles relative to the image -->
+          <div class="service-img-container">
+            <img
+              src="./images/service-image.png"
+              class="service-img"
+              alt="single service"
+            />
+            <!-- service icon  -->
+            <span class="service-icon">
+              <i class="fas fa-flag fa-fw"></i>
+              <!-- the fa-fw is setting the icon as fixed so we make sure the icons have the same dimension no matter which icon we choose, that way we can style all the different icons we choose and they will have the same size-->
+            </span>
+          </div>
+          <div class="service-info">
+            <h4>Доказан Произход</h4>
+            <p>
+              Нашите продукти идват само от най-качествените заводи в Китай,
+              главен дистрибутор - Алиекспрес.
+            </p>
+            <a href="products.html" class="btn service-btn">read more</a>
+          </div>
+        </article>
+        <!-- end of single card -->
+        <!-- single card -->
+        <article class="service-card">
+          <!-- img container - img and icon need to be in the same container as the icon is going to be styles relative to the image -->
+          <div class="service-img-container">
+            <img
+              src="./images/service-image-2.jpeg"
+              class="service-img"
+              alt="single service"
+            />
+            <!-- service icon  -->
+            <span class="service-icon">
+              <i class="fas fa-car fa-fw"></i>
+              <!-- the fa-fw is setting the icon as fixed so we make sure the icons have the same dimension no matter which icon we choose, that way we can style all the different icons we choose and they will have the same size-->
+            </span>
+          </div>
+          <div class="service-info">
+            <h4>Доставка до дома</h4>
+            <p>
+              Нашите шофьори са на разположение 24/7 и готови да доставят
+              желаните от вас продукти.
+            </p>
+            <a href="products.html" class="btn service-btn">read more</a>
+          </div>
+        </article>
+        <!-- end of single card -->
+        <!-- single card -->
+        <article class="service-card">
+          <!-- img container - img and icon need to be in the same container as the icon is going to be styles relative to the image -->
+          <div class="service-img-container">
+            <img
+              src="./images/service-image-3.jpeg"
+              class="service-img"
+              alt="single service"
+            />
+            <!-- service icon  -->
+            <span class="service-icon">
+              <i class="fas fa-thumbs-up fa-fw"></i>
+              <!-- the fa-fw is setting the icon as fixed so we make sure the icons have the same dimension no matter which icon we choose, that way we can style all the different icons we choose and they will have the same size-->
+            </span>
+          </div>
+          <div class="service-info">
+            <h4>специалисти в бранша</h4>
+            <p>
+              Нашата корпорация е известна от 21 години, призната и получила
+              множество сертификати.
+            </p>
+            <a href="products.html" class="btn service-btn">read more</a>
+          </div>
+        </article>
+        <!-- end of single card -->
+      </div>
+    </section>
+    <!-- end of services -->
+
+    <!-- contact form -->
+    <section class="contact">
+      <div class="section-center clearfix">
+        <!-- contact info -->
+        <article class="contact-info">
+          <!-- contact item -->
+          <div class="contact-item">
+            <h4 class="contact-tile">
+              <span class="contant-icon">
+                <i class="fas fa-location-arrow"></i>
+              </span>
+              Централен ОФис
+            </h4>
+            <h4 class="contact-text">
+              МГУ Лабораторен Блок <br />
+              Студентски град, ул."проф. Боян Каменов", София 1700
+            </h4>
+          </div>
+          <!-- end of contact item -->
+
+          <!-- contact item -->
+          <div class="contact-item">
+            <h4 class="contact-tile">
+              <span class="contant-icon">
+                <i class="fas fa-envelope"></i>
+              </span>
+              Имейл
+            </h4>
+            <h4 class="contact-text">ivan.trifonov@mgu.bg</h4>
+          </div>
+          <!-- end of contact item -->
+
+          <!-- contact item -->
+          <div class="contact-item">
+            <h4 class="contact-tile">
+              <span class="contant-icon">
+                <i class="fas fa-phone"></i>
+              </span>
+              Телефон
+            </h4>
+            <h4 class="contact-text">+359 420 386 938</h4>
+          </div>
+          <!-- end of contact item -->
+        </article>
+
+        <!-- contact form -->
+        <article class="contact-form">
+          <h3>За върпоси</h3>
+          <form action="https://formspree.io/f/xwkwweol" method="POST">
+            <div class="form-group">
+              <!-- inputs -->
+              <input
+                type="text"
+                placeholder="име"
+                class="form-control"
+                name="firstName"
+              />
+              <!-- name is the name of the variable that is going to be passed to the server(when a user submits the form) and hold the value of the input-->
+              <input
+                type="email"
+                placeholder="имейл"
+                class="form-control"
+                name="email"
+              />
+              <textarea
+                name="message"
+                rows="10"
+                placeholder="запитвания"
+                class="form-control"
+              ></textarea>
+            </div>
+            <!-- button - outside of the form group -->
+            <button type="submit" class="submit-btn btn">
+              изпратете имейл
+            </button>
+          </form>
+        </article>
+      </div>
+    </section>
+    <!-- end of contact form -->
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="section-center">
+        <div class="social-icons">
+          <!-- social icon -->
+          <a href="#" class="social-icon">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <!-- end of social icon -->
+          <!-- social icon -->
+          <a href="#" class="social-icon">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <!-- end of social icon -->
+          <!-- social icon -->
+          <a href="#" class="social-icon">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <!-- end of social icon -->
+        </div>
+        <h4 class="footer-text">
+          &copy; <span>2020</span>
+          <span class="company">V-Shop</span>
+          всички права са запазени
+        </h4>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
