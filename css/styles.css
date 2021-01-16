@@ -787,3 +787,66 @@ Navbar
     max-width: 20rem;
   }
 }
+
+/* 
+=============
+login
+=============
+*/
+
+.insert-login {
+  background: var(--clr-white);
+}
+.login-center h2 {
+  font-family: var(--ff-secondary);
+  color: var(--clr-primary);
+  text-align: center;
+  max-width: 25rem;
+  margin: 0 auto;
+}
+.login-center .form-group {
+  max-width: 25rem;
+  margin: 0 auto;
+}
+.hide-login {
+  display: none;
+}
+.login-image-container {
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+}
+.login-image {
+  border-radius: var(--radius);
+  transition: all 1s;
+  max-width: 30rem;
+}
+.login-image:hover {
+  transform: rotateY(45deg);
+}
+@media screen and (min-width: 1170px) {
+  .login-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .login-image-container {
+    justify-self: end;
+  }
+}
+/* 
+=============
+register
+=============
+*/
+.register-center h2 {
+  color: #484965;
+  text-align: center;
+}
+.insert-register {
+  background: #d9def0;
+}
+.hide-register {
+  display: none;
+}
+.register-center {
+  max-width: 40rem;
+}

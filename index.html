@@ -29,6 +29,15 @@
       </div>
       <ul class="nav-items">
         <li><a href="#header" class="nav-link">Начало</a></li>
+        <li>
+          <a
+            href="#insert-login"
+            id="#login-logout"
+            onclick="change()"
+            class="nav-link"
+            >Вход</a
+          >
+        </li>
         <li><a href="#skills" class="nav-link">Стоки</a></li>
         <li><a href="#about" class="nav-link">За нас</a></li>
         <li><a href="#products" class="nav-link">Оферти</a></li>
@@ -43,7 +52,7 @@
           Правим всичко с любов <br />
           От 21 години
         </h1>
-        <a href="skills.html" class="btn banner-btn"> Услуги </a>
+        <a href="#" class="btn banner-btn"> Услуги </a>
       </div>
     </header>
     <!-- End of header -->
@@ -104,6 +113,70 @@
       <!-- End of single skill -->
     </section>
     <!-- End of Skills section -->
+
+        <!-- login form -->
+    <section class="insert-login" id="insert-login">
+      <div class="section-center login-center">
+        <article class="login-image-container">
+          <img src="./images/login-image.jpg" alt="login shop image" class="login-image">
+        </article>
+        <article class="login-form">
+        <h2>Влезте във вашия профил.</h2>
+        <form>
+        <div class="form-group">
+            <!-- inputs -->
+            <input
+              type="email"
+              placeholder="имейл"
+              class="form-control"
+              id="login-email"
+              name="email"
+            />
+            <!-- name is the name of the variable that is going to be passed to the server(when a user submits the form) and hold the value of the input-->
+            <input
+              type="password"
+              placeholder="парола"
+              class="form-control"
+              id="login-pword"
+              name="password"
+            />
+
+            <button type="submit" class="submit-btn btn" onclick="validate()">вход</button>
+        </div>
+        </form>
+      </article>
+      </div>
+    </section>
+    <!-- end of login form -->
+
+    <!-- register form -->
+    <section class="insert-register" id="insert-register">
+      <div class="section-center register-center">
+        <h2>Регистрирайте се за големи бонуси</h2>
+        <div class="form-group">
+            <!-- inputs -->
+            <input
+              type="email"
+              placeholder="имейл"
+              class="form-control"
+              id="register-email"
+              name="email"
+            />
+            <!-- name is the name of the variable that is going to be passed to the server(when a user submits the form) and hold the value of the input-->
+            <input
+              type="password"
+              placeholder="парола"
+              class="form-control"
+              id="register-pword"
+              name="password"
+            />
+
+            <button type="submit" class="submit-btn btn" onclick="register()">Регистрация</button>
+        </div>
+        </form>
+      </div>
+    </section>
+    <!-- end of register form -->
 
     <!-- About -->
     <section id="about">
@@ -369,6 +442,7 @@
     </section>
     <!-- end of contact form -->
 
+    
     <!-- footer -->
     <footer class="footer">
       <div class="section-center">
@@ -390,7 +464,7 @@
           <!-- end of social icon -->
         </div>
         <h4 class="footer-text">
-          &copy; <span>2020</span>
+          &copy; <span id="date"></span>
           <span class="company">V-Shop</span>
           всички права са запазени
         </h4>
