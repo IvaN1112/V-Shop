@@ -22,18 +22,17 @@ const date = (document.getElementById(
 ).innerHTML = new Date().getFullYear());
 var loggedIn = false;
 
-var unArray = [
-  "markwalt@gmail.com",
-  "jongossy@gmail.com",
-  "lisacain@gmail.com",
-  "jenndemp@gmail.com",
-];
-var pwArray = ["mark1234", "flomaygo", "lisa1234", "jenny1234"];
-var fnArray = ["Mark Walters", "Jonathan Goss", "Lisa Cain", "Jenny Dempsey"];
-
 // validate login
 
 function validate() {
+  var unArray = [
+    "markwalt@gmail.com",
+    "jongossy@gmail.com",
+    "lisacain@gmail.com",
+    "jenndemp@gmail.com",
+  ];
+  var pwArray = ["mark1234", "flomaygo", "lisa1234", "jenny1234"];
+  var fnArray = ["Mark Walters", "Jonathan Goss", "Lisa Cain", "Jenny Dempsey"];
   var un = document.getElementById("login-email").value;
   var pw = document.getElementById("login-pword").value;
   var valid = false;
@@ -72,6 +71,7 @@ loginLogoutButton.addEventListener("click", () => {
   if ((loginLogoutButton.innerHTML = "Изход")) {
     loginForm.classList.remove("hide-login");
     registerForm.classList.remove("hide-register");
+    loginLogoutButton.innerHTML = "Вход";
     unField.value = "";
     pwField.value = "";
   }
