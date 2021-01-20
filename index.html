@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
+    <!-- end of introduction -->
     <!-- Navbar setup -->
     <!-- nav button -->
     <span class="nav-btn" id="nav-btn">
@@ -22,7 +23,6 @@
     <!-- Navbar start -->
     <nav class="navbar" id="navbar">
       <div class="navbar-header">
-        <!-- we add the div as it is a block level element and the icon would take the whole width of the row, then we can align it to the right easily with text-align: right as it accepts such properties-->
         <span class="nav-close" id="nav-close">
           <i class="fas fa-times"></i>
         </span>
@@ -44,6 +44,10 @@
     </nav>
     <!-- end of navbar -->
     <!-- Header -->
+    <!-- introduction -->
+    <div class="introduction">
+      <h4>Курсова работа изготевена от Иван Трифонов, КТИД 3-ти курс, факултетен номер 182913</h4>
+    </div>
     <header class="header" id="header">
       <div class="banner">
         <h2>Магазинът за всичко - V-Shop - изборът е ваш</h2>
@@ -113,7 +117,20 @@
     </section>
     <!-- End of Skills section -->
 
-        <!-- login form -->
+
+    <!-- logged in user info -->
+    <section class="logged-in-user hide-logged-in-info" id="logged-in-info">
+      <div class="section-center logged-in-user-center">
+        <article class="logged-in-info">
+          <h3>Добре дошли в профила си</h3>
+          <p></p> Изпратете ни имейл посредством <a href="#contact">тази форма</a> и ще ви изпратим специални оферти.</p>
+        </article>
+        <img src="./images/discount.jpg" alt="" class="discount-image">
+      </div>
+    </section>
+    <!-- end of logged in user info -->
+
+    <!-- login form -->
     <section class="insert-login" id="insert-login">
       <div class="section-center login-center">
         <article class="login-image-container">
@@ -127,15 +144,14 @@
             <input
               type="email"
               placeholder="имейл"
-              class="form-control"
+              class="form-control login-control"
               id="login-email"
               name="email"
             />
-            <!-- name is the name of the variable that is going to be passed to the server(when a user submits the form) and hold the value of the input-->
             <input
               type="password"
               placeholder="парола"
-              class="form-control"
+              class="form-control login-control"
               id="login-pword"
               name="password"
             />
@@ -148,37 +164,10 @@
     </section>
     <!-- end of login form -->
 
-    <!-- register form -->
-    <section class="insert-register" id="insert-register">
-      <div class="section-center register-center">
-        <h2>Регистрирайте се за големи бонуси</h2>
-        <div class="form-group">
-            <!-- inputs -->
-            <input
-              type="email"
-              placeholder="имейл"
-              class="form-control"
-              id="register-email"
-              name="email"
-            />
-            <!-- name is the name of the variable that is going to be passed to the server(when a user submits the form) and hold the value of the input-->
-            <input
-              type="password"
-              placeholder="парола"
-              class="form-control"
-              id="register-pword"
-              name="password"
-            />
-
-            <button type="submit" class="submit-btn btn" onclick="register()">Регистрация</button>
-        </div>
-        </form>
-      </div>
-    </section>
-    <!-- end of register form -->
+    
 
     <!-- About -->
-    <section id="about">
+    <section class="about" id="about">
       <div class="section-center clearfix">
         <!-- about img -->
         <article class="about-img">
@@ -208,7 +197,7 @@
             всякакви форми и вариации) на достъпни цени. Може да разгледате
             нашите месечни брошури по телевизионните реклами.
           </p>
-          <a href="about.html" class="btn">learn more</a>
+          <a href="about.html" class="btn">научете повече</a>
         </article>
       </div>
     </section>
@@ -230,7 +219,7 @@
             по-горе. Може да се каже, че имаме почти всичко, освен числата от
             тотото.
           </p>
-          <a href="products.html" class="btn">inventory</a>
+          <a href="products.html" class="btn">инвентар</a>
         </article>
         <!-- products inventory -->
         <article class="products-inventory clearfix">
@@ -268,6 +257,57 @@
           </div>
           <!-- end of single product -->
         </article>
+
+
+
+        <h3>Нашата верига има магазини в следните градове:</h3>
+        <div class="database-info-container">
+          <table class="database-cities-table">
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Country</th>
+              <th>Continent</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Sofia</td>            
+              <td>Bulgaria</td>
+              <td>Europe</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Istanbul</td>            
+              <td>Turkey</td>
+              <td>Europe/Asia</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Pomorie</td>            
+              <td>Bulgaria</td>
+              <td>Europe</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>London</td>            
+              <td>United Kingdom</td>
+              <td>Europe</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Wuhan</td>            
+              <td>China</td>
+              <td>Asia</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Lovech</td>            
+              <td>Bulgaria</td>
+              <td>Europe</td>
+            </tr>                                                  
+          </table>
+        </div>
+          <img src="./images/storage.jpg" class="storage-image" alt="shop storage image">
       </div>
     </section>
     <!-- end of products -->
@@ -283,7 +323,7 @@
       <div class="section-center clearfix">
         <!-- single card -->
         <article class="service-card">
-          <!-- img container - img and icon need to be in the same container as the icon is going to be styles relative to the image -->
+          
           <div class="service-img-container">
             <img
               src="./images/service-image.png"
@@ -293,7 +333,6 @@
             <!-- service icon  -->
             <span class="service-icon">
               <i class="fas fa-flag fa-fw"></i>
-              <!-- the fa-fw is setting the icon as fixed so we make sure the icons have the same dimension no matter which icon we choose, that way we can style all the different icons we choose and they will have the same size-->
             </span>
           </div>
           <div class="service-info">
@@ -302,13 +341,12 @@
               Нашите продукти идват само от най-качествените заводи в Китай,
               главен дистрибутор - Алиекспрес.
             </p>
-            <a href="products.html" class="btn service-btn">read more</a>
+            <a href="products.html" class="btn service-btn">прочетете тук</a>
           </div>
         </article>
         <!-- end of single card -->
         <!-- single card -->
         <article class="service-card">
-          <!-- img container - img and icon need to be in the same container as the icon is going to be styles relative to the image -->
           <div class="service-img-container">
             <img
               src="./images/service-image-2.jpeg"
@@ -318,7 +356,6 @@
             <!-- service icon  -->
             <span class="service-icon">
               <i class="fas fa-car fa-fw"></i>
-              <!-- the fa-fw is setting the icon as fixed so we make sure the icons have the same dimension no matter which icon we choose, that way we can style all the different icons we choose and they will have the same size-->
             </span>
           </div>
           <div class="service-info">
@@ -327,13 +364,12 @@
               Нашите шофьори са на разположение 24/7 и готови да доставят
               желаните от вас продукти.
             </p>
-            <a href="products.html" class="btn service-btn">read more</a>
+            <a href="products.html" class="btn service-btn">прочетете тук</a>
           </div>
         </article>
         <!-- end of single card -->
         <!-- single card -->
         <article class="service-card">
-          <!-- img container - img and icon need to be in the same container as the icon is going to be styles relative to the image -->
           <div class="service-img-container">
             <img
               src="./images/service-image-3.jpeg"
@@ -343,7 +379,6 @@
             <!-- service icon  -->
             <span class="service-icon">
               <i class="fas fa-thumbs-up fa-fw"></i>
-              <!-- the fa-fw is setting the icon as fixed so we make sure the icons have the same dimension no matter which icon we choose, that way we can style all the different icons we choose and they will have the same size-->
             </span>
           </div>
           <div class="service-info">
@@ -352,7 +387,7 @@
               Нашата корпорация е известна от 21 години, призната и получила
               множество сертификати.
             </p>
-            <a href="products.html" class="btn service-btn">read more</a>
+            <a href="products.html" class="btn service-btn">прочетете тук</a>
           </div>
         </article>
         <!-- end of single card -->
@@ -360,8 +395,143 @@
     </section>
     <!-- end of services -->
 
+    <!-- survey -->
+    <section class="survey">
+      <h2>Моля попълнете нашата кратка анкета:</h2>
+      <div class="section-center survey-center">
+        <article class="stock">
+          <h4>Кои категории искате да освежим:</h4>
+          <div class="choice">
+            <input type="checkbox" id="books"> <label for="books">Книги</label>
+          </div>
+          <div class="choice">
+            <input type="checkbox" id="clothes"> <label for="clothes">Дрехи</label>
+          </div>
+          <div class="choice">
+            <input type="checkbox" id="movies"> <label for="movies">Филми</label>
+          </div>
+          <div class="choice">
+            <input type="checkbox" id="furniture"> <label for="furniture">Мебели</label>
+          </div>
+          <div class="choice">
+            <input type="checkbox" id="food"> <label for="food">Храна</label>
+          </div>
+        </article>
+
+        <article class="new-cat">
+          <h4>Каква нова категория бихте искали от нас:</h4>
+          <div class="choice">
+            <input type="radio" id="sports" name="category"> <label for="sports">Спорт</label>
+          </div>
+          <div class="choice">
+            <input type="radio" id="chem"  name="category"> <label for="chem">Химия</label>
+          </div>
+          <div class="choice">
+            <input type="radio" id="study"  name="category"> <label for="study">Учене</label>
+          </div>
+          <div class="choice">
+            <input type="radio" id="cars"  name="category"> <label for="cars">Коли</label>
+          </div>
+          <div class="choice">
+            <input type="radio" id="jewelry"  name="category"> <label for="jewelry">Бижута</label>
+          </div>
+        </article>
+
+      </div>
+      <a href="" class="btn survey-btn">Изпрати</a>
+
+          <div class="content-divider"></div>
+
+      <h2>Направете и прегледайте поръчка тук:</h2>
+      <div class="section-center database-center">
+        <article class="new-cat database-form">
+          <h4>Направете/Променете ваша поръчка:</h4>
+          <div class="choice-2">
+            <input type="text" id="books" class="database-input"> <label for="books" class="label-2">Добави Поръчка</label>  
+          </div> 
+          <div class="choice-2">
+             <input type="text" id="clothes"  class="database-input"> <label for="clothes" class="label-2">Откажи поръчка</label> 
+          </div>
+          <div class="choice-2">
+            <input type="text" id="movies" class="database-input" > <label for="movies" class="label-2">Промени поръчка</label> 
+          </div> 
+          <div class="choice-2- choice-3-2">
+             <input type="text" id="furniture"  class="database-input"> <label for="furniture" class="label-2">Потърси по първо име и дата</label>
+          </div>
+          <a href="" class="btn survey-btn">Изпрати</a>
+        </article>
+      </div>
+    </section>
+    <!-- end of survey -->
+
+
+    <!-- gallery -->
+    <section class="gallery">
+      <h2>Добиваме нашите продукти от екзотични локации като тези:</h2>
+        <div class="container">
+        <div class="mySlides">
+          <div class="numbertext">1 / 6</div>
+          <img src="./images/img_woods_wide.jpg" style="width: 100%" class="gallery-img"/>
+        </div>
+    
+        <div class="mySlides">
+          <div class="numbertext">2 / 6</div>
+          <img src="./images/img_5terre_wide.jpg" style="width: 100%" class="gallery-img"/>
+        </div>
+    
+        <div class="mySlides">
+          <div class="numbertext">3 / 6</div>
+          <img src="./images/img_mountains_wide.jpg" style="width: 100%" class="gallery-img"/>
+        </div>
+    
+        <div class="mySlides">
+          <div class="numbertext">4 / 6</div>
+          <img src="./images/img_lights_wide.jpg" style="width: 100%" class="gallery-img"/>
+        </div>
+    
+        <div class="mySlides">
+          <div class="numbertext">5 / 6</div>
+          <img src="./images/img_nature_wide.jpg" style="width: 100%" class="gallery-img"/>
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">6 / 6</div>
+          <img src="./images/img_snow_wide.jpg" style="width: 100%" class="gallery-img"/>
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+      </div>
+
+      <div class="gallery-menu">
+      <div class="btn gallery-btn" id="show-gallery" onclick="test()">Покажи всички</div>
+      <div class="btn gallery-btn" id="">Предложения за още локации</div>
+       </div>
+
+      <div class="row hide-gallery" id="all-images">
+        <div class="column">
+          <img class="demo cursor" src="./images/img_woods.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="./images/img_5terre.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="./images/img_mountains.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="./images/img_lights.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="./images/img_nature.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+        </div>    
+        <div class="column">
+          <img class="demo cursor" src="./images/img_snow.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+        </div>
+      </div>
+    </section>
+    <!-- end of gallery -->
+
     <!-- contact form -->
-    <section class="contact">
+    <section class="contact" id="contact">
       <div class="section-center clearfix">
         <!-- contact info -->
         <article class="contact-info">
@@ -417,7 +587,6 @@
                 class="form-control"
                 name="firstName"
               />
-              <!-- name is the name of the variable that is going to be passed to the server(when a user submits the form) and hold the value of the input-->
               <input
                 type="email"
                 placeholder="имейл"
@@ -431,7 +600,6 @@
                 class="form-control"
               ></textarea>
             </div>
-            <!-- button - outside of the form group -->
             <button type="submit" class="submit-btn btn">
               изпратете имейл
             </button>
@@ -440,8 +608,10 @@
       </div>
     </section>
     <!-- end of contact form -->
+    <div class="content-divider">
 
-    
+    </div>
+
     <!-- footer -->
     <footer class="footer">
       <div class="section-center">
@@ -469,7 +639,7 @@
         </h4>
       </div>
     </footer>
-
+    <!-- custom js -->
     <script src="app.js"></script>
   </body>
 </html>

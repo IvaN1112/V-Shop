@@ -63,7 +63,7 @@ h4 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 h2 {
@@ -238,6 +238,23 @@ Animation
 
 /* 
 =============
+Introduction
+=============
+*/
+.introduction {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  height: 3rem;
+  background: #7dac4c;
+  color: var(--clr-white);
+}
+.introduction h4 {
+  margin-bottom: 0;
+}
+
+/* 
+=============
 Header
 =============
 */
@@ -366,6 +383,10 @@ About
 =============
 */
 
+.about {
+  background: var(--clr-grey-10);
+}
+
 .about-img, /* for some reason this rule made me realise that padding do not collapse but are added to eachother so padding top of one element that has 1 rem and padding bottom of the element above it that also has a margin but for bottom of 1 rem - both have 2 rem padding collectively */
 .about-info {
   padding: 1rem 0;
@@ -410,7 +431,7 @@ Products
 */
 
 .products {
-  background: var(--clr-grey-10);
+  background: var(--clr-white);
 }
 
 .products article {
@@ -424,6 +445,9 @@ Products
 
 .product {
   margin-bottom: 2rem;
+}
+.products-info h2 {
+  text-align: center;
 }
 
 .product-img {
@@ -471,11 +495,58 @@ Products
 
 /* after 84 years I made it work and I am glad I solved it, a good tool that helped me find the differences is the text compare site which compared my code to the original one and I saw there was some mistakes I made when targetting the classes in the media query, bookmarked the text/code compare site, probably gonna use it quite a lot in the future when learning new stuff and do not know where the difference between my code and the teacher's is */
 
+table {
+  border: 2px solid var(--clr-grey-5);
+  border-radius: var(--radius);
+}
+
+.table-container {
+  text-align: center;
+}
+td {
+  text-align: center;
+}
+.database-cities-table {
+  margin-left: auto;
+  margin-right: auto;
+}
+.storage-image {
+  border-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+  margin-top: 1rem;
+  max-width: 30rem;
+}
+.products h3 {
+  text-align: center;
+}
+@media screen and (min-width: 992px) {
+  .database-info-container table,
+  .storage-image {
+    float: left;
+    width: 47%;
+  }
+  .storage-image {
+    margin-left: 6%;
+    margin-top: 0;
+  }
+  .database-info-container table {
+    margin-top: 4rem;
+  }
+}
+
 /* 
 =============
 Header
 =============
 */
+
+.services {
+  background: var(--clr-grey-10);
+}
+
+.services-title {
+  padding-top: 2rem;
+}
 
 .services .section-title {
   margin-top: 3rem;
@@ -709,7 +780,7 @@ Navbar
 /* button */
 .nav-btn {
   position: fixed;
-  top: 5%;
+  top: 11.5%;
   left: 5%;
   font-size: 2.5rem;
   color: var(--clr-primary);
@@ -718,7 +789,7 @@ Navbar
   animation: bounce 2s ease infinite;
 }
 
-/* actually navigation styling */
+/* actual navigation styling */
 
 .navbar {
   position: fixed;
@@ -821,7 +892,29 @@ login
   max-width: 30rem;
 }
 .login-image:hover {
-  transform: rotateY(45deg);
+  transform: rotate(5deg);
+}
+.logged-in-user {
+  text-align: center;
+  background: var(--clr-grey-10);
+}
+.logged-in-user a {
+  color: var(--clr-primary-light);
+}
+.logged-in-info {
+  max-width: 34rem;
+  align-self: center;
+}
+.login-control {
+  border: 1px solid black;
+}
+.discount-image {
+  object-fit: cover;
+  height: 25rem;
+  border-radius: var(--radius);
+}
+.hide-logged-in-info {
+  display: none;
 }
 @media screen and (min-width: 1170px) {
   .login-center {
@@ -832,21 +925,226 @@ login
     justify-self: end;
   }
 }
+@media screen and (min-width: 1170px) {
+  .logged-in-user-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 /* 
 =============
-register
+survey
 =============
 */
-.register-center h2 {
-  color: #484965;
+
+.survey .survey-center,
+.survey,
+.database-center {
   text-align: center;
+  letter-spacing: var(--spacing);
 }
-.insert-register {
-  background: #d9def0;
+.survey h2 {
+  margin-top: 2rem;
+  margin-bottom: 0;
+  padding: 0 1rem;
+  text-align: center;
+  font-family: var(--ff-secondary), cursive;
+  color: var(--clr-primary);
 }
-.hide-register {
+.choice {
+  position: relative;
+  width: 8rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid var(--clr-primary);
+  border-radius: var(--radius);
+  text-align: center;
+  transition: var(--transition);
+}
+.choice:hover {
+  background: var(--clr-primary);
+  color: var(--clr-white);
+}
+input[type="radio"],
+input[type="checkbox"] {
+  position: absolute;
+  left: 5%;
+  top: 20%;
+}
+.stock {
+  margin-bottom: 2rem;
+}
+.stock,
+.new-cat {
+  transition: var(--transition);
+}
+.stock:hover,
+.new-cat:hover {
+  background: var(--clr-primary-light);
+}
+.stock h4,
+.new-cat h4 {
+  padding-top: 0.6rem;
+  color: var(--clr-primary);
+  margin-bottom: 1.3rem;
+}
+
+.survey article {
+  border: 2px solid #74a046;
+  border-radius: var(--radius);
+}
+
+@media screen and (min-width: 764px) {
+  .survey-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+  }
+  .stock {
+    margin-bottom: 0;
+  }
+}
+.survey-btn {
+  width: 20%;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+
+/* 
+=============
+database insert
+=============
+*/
+
+.choice-2 {
+  position: relative;
+}
+.label-2 {
+  position: absolute;
+  padding-left: 1rem;
+}
+.database-form {
+  padding-bottom: 1rem;
+}
+.choice-3-2 {
+  margin-bottom: 1rem;
+}
+.database-input {
+}
+
+/* 
+=============
+gallery slideshow
+=============
+*/
+.hide-gallery {
+  transition: var(--transition);
   display: none;
 }
-.register-center {
-  max-width: 40rem;
+
+.gallery h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--clr-primary);
+  margin-bottom: 0;
+  padding-top: 5px;
+  height: 2.5rem;
+}
+
+.container img {
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+.gallery-menu {
+  text-align: center;
+}
+.gallery-btn {
+  border-radius: var(--radius);
+  margin: 1.5rem 0.5rem;
 }
