@@ -124,5 +124,3 @@ function test() {
     allImages.classList.toggle("hide-gallery");
   });
 }
-
-//navigation

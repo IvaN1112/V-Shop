@@ -30,27 +30,10 @@
         <li><a href="#header" class="nav-link">Начало</a></li>
         <li>
           <a
-            href="#insert-login"
             id="#login-logout"
-            class="nav-link"
-            >Вход</a
           >
         </li>
         <li><a href="#survey" class="nav-link">Анкети</a></li>
-        <li><a href="#database-form" class="nav-link base-link" id="database-menu">База данни</a>
-        <ul class="hide-database-menu sub-menu" id="database-sub-menu">
-          <li><a href="#">Въвеждане на данни</a></li>
-          <li><a href="#">Изтриване на данни</a></li>
-          <li><a href="#">Редктиране на данни</a></li>
-          <li><a href="#">Търсене на данни</a></a></li>
-
-        </ul></li>
-                <li><a href="#database-form" class="nav-link base-link" id="database-menu">Галерия</a>
-        <ul class="hide-database-menu sub-menu" id="database-sub-2-menu">
-          <li><a href="#">Добавяне</a></li>
-          <li><a href="#">Показване</a></li>
-        </ul></li>
-        
         <li><a href="#skills" class="nav-link">Стоки</a></li>
         <li><a href="#about" class="nav-link">За нас</a></li>
         <li><a href="#products" class="nav-link">Оферти</a></li>
@@ -144,42 +127,6 @@
     </section>
     <!-- end of logged in user info -->
 
-    <!-- login form -->
-    <section class="insert-login" id="insert-login">
-      <div class="section-center login-center">
-        <article class="login-image-container">
-          <img src="./images/login-image.jpg" alt="login shop image" class="login-image">
-        </article>
-        <article class="login-form">
-        <h2>Влезте във вашия профил.</h2>
-        <form>
-        <div class="form-group">
-            <!-- inputs -->
-            <input
-              type="email"
-              placeholder="имейл"
-              class="form-control login-control"
-              id="login-email"
-              name="email"
-            />
-            <input
-              type="password"
-              placeholder="парола"
-              class="form-control login-control"
-              id="login-pword"
-              name="password"
-            />
-
-            <button type="button" class="submit-btn btn" onclick="validate()">вход</button>
-        </div>
-        </form>
-      </article>
-      </div>
-    </section>
-    <!-- end of login form -->
-
-    
-
     <!-- About -->
     <section class="about" id="about">
       <div class="section-center clearfix">
@@ -250,7 +197,7 @@
           <!-- single product -->
           <div class="product">
             <img
-              src="./images/product-2.jpeg"
+              src="./images/books.jpg"
               alt="single product"
               class="product-img"
             />
@@ -261,66 +208,15 @@
           <!-- single product -->
           <div class="product">
             <img
-              src="./images/product-3.jpeg"
+              src="./images/audio.jpg"
               alt="single product"
               class="product-img"
             />
-            <h4 class="product-title">Защита от Корона</h4>
+            <h4 class="product-title">Аудио акесоари</h4>
             <h4 class="product-price">126.99 лв.</h4>
           </div>
           <!-- end of single product -->
         </article>
-
-
-
-        <h3>Нашата верига има магазини в следните градове:</h3>
-        <div class="database-info-container">
-          <table class="database-cities-table">
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Country</th>
-              <th>Continent</th>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Sofia</td>            
-              <td>Bulgaria</td>
-              <td>Europe</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Istanbul</td>            
-              <td>Turkey</td>
-              <td>Europe/Asia</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Pomorie</td>            
-              <td>Bulgaria</td>
-              <td>Europe</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>London</td>            
-              <td>United Kingdom</td>
-              <td>Europe</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Wuhan</td>            
-              <td>China</td>
-              <td>Asia</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>Lovech</td>            
-              <td>Bulgaria</td>
-              <td>Europe</td>
-            </tr>                                                  
-          </table>
-        </div>
-          <img src="./images/storage.jpg" class="storage-image" alt="shop storage image">
       </div>
     </section>
     <!-- end of products -->
@@ -339,7 +235,7 @@
           
           <div class="service-img-container">
             <img
-              src="./images/service-image.png"
+              src="./images/origin.jpg"
               class="service-img"
               alt="single service"
             />
@@ -362,7 +258,7 @@
         <article class="service-card">
           <div class="service-img-container">
             <img
-              src="./images/service-image-2.jpeg"
+              src="./images/delivery.jpg"
               class="service-img"
               alt="single service"
             />
@@ -408,75 +304,6 @@
     </section>
     <!-- end of services -->
 
-    <!-- survey -->
-    <section class="survey" id="survey">
-      <h2>Моля попълнете нашата кратка анкета:</h2>
-      <div class="section-center survey-center">
-        <article class="stock">
-          <h4>Кои категории искате да освежим:</h4>
-          <div class="choice">
-            <input type="checkbox" id="books"> <label for="books">Книги</label>
-          </div>
-          <div class="choice">
-            <input type="checkbox" id="clothes"> <label for="clothes">Дрехи</label>
-          </div>
-          <div class="choice">
-            <input type="checkbox" id="movies"> <label for="movies">Филми</label>
-          </div>
-          <div class="choice">
-            <input type="checkbox" id="furniture"> <label for="furniture">Мебели</label>
-          </div>
-          <div class="choice">
-            <input type="checkbox" id="food"> <label for="food">Храна</label>
-          </div>
-        </article>
-
-        <article class="new-cat">
-          <h4>Каква нова категория бихте искали от нас:</h4>
-          <div class="choice">
-            <input type="radio" id="sports" name="category"> <label for="sports">Спорт</label>
-          </div>
-          <div class="choice">
-            <input type="radio" id="chem"  name="category"> <label for="chem">Химия</label>
-          </div>
-          <div class="choice">
-            <input type="radio" id="study"  name="category"> <label for="study">Учене</label>
-          </div>
-          <div class="choice">
-            <input type="radio" id="cars"  name="category"> <label for="cars">Коли</label>
-          </div>
-          <div class="choice">
-            <input type="radio" id="jewelry"  name="category"> <label for="jewelry">Бижута</label>
-          </div>
-        </article>
-
-      </div>
-      <a href="" class="btn survey-btn">Изпрати</a>
-          <div class="content-divider"></div>
-
-      <h2 id="database-form">Направете и прегледайте поръчка тук:</h2>
-      <div class="section-center database-center">
-        <article class="new-cat database-form"">
-          <h4>Направете/Променете ваша поръчка:</h4>
-          <div class="choice-2">
-            <input type="text" id="add" class="database-input"> <label for="add" class="label-2">Добави Поръчка</label>  
-          </div> 
-          <div class="choice-2">
-             <input type="text" id="decline"  class="database-input"> <label for="decline" class="label-2">Откажи поръчка</label> 
-          </div>
-          <div class="choice-2">
-            <input type="text" id="change" class="database-input" > <label for="change" class="label-2">Промени поръчка</label> 
-          </div> 
-          <div class="choice-2- choice-3-2">
-             <input type="text" id="search"  class="database-input"> <label for="search" class="label-2">Потърси по първо име и дата</label>
-          </div>
-          <a href="" class="btn survey-btn">Изпрати</a>
-        </article>
-      </div>
-    </section>
-    <!-- end of survey -->
-
-
     <!-- gallery -->
     <section class="gallery">
       <h2>Добиваме нашите продукти от екзотични локации като тези:</h2>
@@ -516,9 +343,6 @@
 
       <div class="gallery-menu">
       <div class="btn gallery-btn" id="show-gallery" onclick="test()">Покажи всички</div>
-      <div class="btn gallery-btn" id="">Предложения за още локации</div>
-       </div>
-
       <div class="row hide-gallery" id="all-images">
         <div class="column">
           <img class="demo cursor" src="./images/img_woods.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
