@@ -11,6 +11,8 @@ const loggedInInfo = document.getElementById("logged-in-info");
 const galleryImage = document.getElementById("gallery-img");
 const showImages = document.getElementById("show-gallery");
 const allImages = document.getElementById("all-images");
+const databaseMenu = document.getElementById("database-menu");
+const databaseSubMenu = document.getElementById("database-sub-menu");
 
 // show nav
 navBtn.addEventListener("click", () => {
@@ -122,3 +124,5 @@ function test() {
     allImages.classList.toggle("hide-gallery");
   });
 }
+
+//navigation

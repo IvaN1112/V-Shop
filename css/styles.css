@@ -832,6 +832,9 @@ Navbar
 .nav-items {
   list-style-type: none;
 }
+.hide-database-menu {
+  display: none;
+}
 
 /* we target the links, not the list items, as we would style the whole list items if we chose it and this is not what we wish, we simply wish to style the links INSIDE of them, EVEN though there are not any other elements, more on that later */
 .nav-link {
@@ -857,6 +860,27 @@ Navbar
     width: 33vw;
     max-width: 20rem;
   }
+}
+
+.navbar ul li:nth-child(4):hover ul {
+  display: block;
+}
+.navbar ul li:nth-child(5):hover ul {
+  display: block;
+}
+.sub-menu {
+  text-align: center;
+}
+.sub-menu li {
+  padding: 1rem 0;
+  font-size: 1.3rem;
+  color: var(--clr-grey-5);
+  transition: var(--transition);
+  letter-spacing: 2px;
+}
+.sub-menu li:hover {
+  background: var(--clr-primary-light);
+  color: var(--clr-primary);
 }
 
 /* 

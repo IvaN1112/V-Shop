@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Tea Station || Home</title>
+    <title>V Shop || Home</title>
     <!-- font-awesome -->
     <link
       rel="stylesheet"
@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <!-- end of introduction -->
     <!-- Navbar setup -->
     <!-- nav button -->
     <span class="nav-btn" id="nav-btn">
@@ -37,6 +36,21 @@
             >Вход</a
           >
         </li>
+        <li><a href="#survey" class="nav-link">Анкети</a></li>
+        <li><a href="#database-form" class="nav-link base-link" id="database-menu">База данни</a>
+        <ul class="hide-database-menu sub-menu" id="database-sub-menu">
+          <li><a href="#">Въвеждане на данни</a></li>
+          <li><a href="#">Изтриване на данни</a></li>
+          <li><a href="#">Редктиране на данни</a></li>
+          <li><a href="#">Търсене на данни</a></a></li>
+
+        </ul></li>
+                <li><a href="#database-form" class="nav-link base-link" id="database-menu">Галерия</a>
+        <ul class="hide-database-menu sub-menu" id="database-sub-2-menu">
+          <li><a href="#">Добавяне</a></li>
+          <li><a href="#">Показване</a></li>
+        </ul></li>
+        
         <li><a href="#skills" class="nav-link">Стоки</a></li>
         <li><a href="#about" class="nav-link">За нас</a></li>
         <li><a href="#products" class="nav-link">Оферти</a></li>
@@ -188,9 +202,8 @@
           </div>
           <!-- end of section title -->
           <p class="about-text">
-            Създадохме го през 1999 година като малко гаражно магазинче за
-            домашен кашкавал в един квартал в Сливен. Днес V-Shop e един от
-            водещите лидери в предлагане на стока.
+            Създадохме го през 1999 година като едно скромно хранително магазинче в един малък софийски квартал. Днес V-Shop e един от
+            водещите лидери в предлагане на стоки.
           </p>
           <p class="about-text">
             При нас можете буквално да намерите от пиле(и живо имаме) мляко(във
@@ -396,7 +409,7 @@
     <!-- end of services -->
 
     <!-- survey -->
-    <section class="survey">
+    <section class="survey" id="survey">
       <h2>Моля попълнете нашата кратка анкета:</h2>
       <div class="section-center survey-center">
         <article class="stock">
@@ -439,24 +452,23 @@
 
       </div>
       <a href="" class="btn survey-btn">Изпрати</a>
-
           <div class="content-divider"></div>
 
-      <h2>Направете и прегледайте поръчка тук:</h2>
+      <h2 id="database-form">Направете и прегледайте поръчка тук:</h2>
       <div class="section-center database-center">
-        <article class="new-cat database-form">
+        <article class="new-cat database-form"">
           <h4>Направете/Променете ваша поръчка:</h4>
           <div class="choice-2">
-            <input type="text" id="books" class="database-input"> <label for="books" class="label-2">Добави Поръчка</label>  
+            <input type="text" id="add" class="database-input"> <label for="add" class="label-2">Добави Поръчка</label>  
           </div> 
           <div class="choice-2">
-             <input type="text" id="clothes"  class="database-input"> <label for="clothes" class="label-2">Откажи поръчка</label> 
+             <input type="text" id="decline"  class="database-input"> <label for="decline" class="label-2">Откажи поръчка</label> 
           </div>
           <div class="choice-2">
-            <input type="text" id="movies" class="database-input" > <label for="movies" class="label-2">Промени поръчка</label> 
+            <input type="text" id="change" class="database-input" > <label for="change" class="label-2">Промени поръчка</label> 
           </div> 
           <div class="choice-2- choice-3-2">
-             <input type="text" id="furniture"  class="database-input"> <label for="furniture" class="label-2">Потърси по първо име и дата</label>
+             <input type="text" id="search"  class="database-input"> <label for="search" class="label-2">Потърси по първо име и дата</label>
           </div>
           <a href="" class="btn survey-btn">Изпрати</a>
         </article>
