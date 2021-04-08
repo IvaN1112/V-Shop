@@ -4,7 +4,7 @@ Fonts
 ====================
 */
 
-@import url("https://fonts.googleapis.com/css?family=Catamaran:400,700|Grand+Hotel");
+@import url('https://fonts.googleapis.com/css?family=Catamaran:400,700|Grand+Hotel');
 
 /*
 ==============
@@ -19,8 +19,8 @@ Variables
   --clr-grey-5: #617d98;
   --clr-grey-10: #f1f5f8;
   --clr-white: #fff;
-  --ff-primary: "Catamaran", sans-serif;
-  --ff-secondary: "Grand Hotel", cursive;
+  --ff-primary: 'Catamaran', sans-serif;
+  --ff-secondary: 'Grand Hotel', cursive;
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
   --radius: 0.5rem;
@@ -134,7 +134,7 @@ p {
 }
 .clearfix::before, /* we are only interested in elements that are going to follow so there is no need for the before but there it is no issue adding it just for kicks */
 .clearfix::after {
-  content: "";
+  content: '';
   clear: both; /* when it is floated to the left(by default) make it so the float is ignored and elements appear below it, as usual, we can also set it to display both just so if we have any content before it it is also cleared and appears but on top of it as it would be positioned below it in this case */
   display: table; /* prevents margins from collapsing
   Here is an awesome article about it.
@@ -262,7 +262,7 @@ Header
 .header {
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("../images/main-bcg.jpg") center/cover no-repeat;
+    url('../images/main-bcg.jpg') center/cover no-repeat;
   position: relative;
   /* animation */
   overflow-x: hidden; /* twe add it so that the content that we translate  in order to hide our banner headings in the beginning of their animations does not create a "left-right" scrollbar at the bottom of the page */
@@ -991,8 +991,8 @@ survey
   background: var(--clr-primary);
   color: var(--clr-white);
 }
-input[type="radio"],
-input[type="checkbox"] {
+input[type='radio'],
+input[type='checkbox'] {
   position: absolute;
   left: 5%;
   top: 20%;
@@ -1063,110 +1063,68 @@ database insert
 gallery slideshow
 =============
 */
-.hide-gallery {
-  transition: var(--transition);
-  display: none;
-}
 
 .gallery h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   text-align: center;
-  color: var(--clr-primary);
-  margin: 2.5rem 0 0.3rem 0;
+  padding-top: 1rem;
 }
-
-.container img {
-  vertical-align: middle;
-  object-fit: cover;
-}
-
-/* Position the image container (needed to position the left and right arrows) */
-.container {
+.gallery-container {
+  height: 400px;
+  width: 95vw;
+  max-width: 20rem;
+  margin: 1rem auto;
+  background-color: rgb(113, 224, 141);
+  border: 1px solid var(--clr-primary-light);
+  border-radius: var(--radius);
   position: relative;
+  transition: var(--transition);
+  overflow: hidden;
 }
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
+.prev-btn {
   position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
+  top: 50%;
+  transform: translateX(50%);
 }
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+.next-btn {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateX(-150%);
 }
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
+.active {
   position: absolute;
   top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(0);
 }
-
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
+.next {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translate(100%);
 }
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
-}
-
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
-
-.gallery-menu {
-  text-align: center;
+.last {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translate(-100%);
 }
 .gallery-btn {
-  border-radius: var(--radius);
-  margin: 1.5rem 0.5rem;
+  background: none;
+  border: none;
+  color: #5dfa91;
+  transition: var(--transition);
+}
+.gallery-btn:hover {
+  color: var(--clr-primary-light);
+}
+.gallery img {
+  transition: var(--transition);
 }

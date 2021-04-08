@@ -1,12 +1,10 @@
+import get from './utils/getElement.js';
 // setup nav
-const navBtn = document.getElementById('nav-btn');
-const navbar = document.getElementById('navbar');
-const navClose = document.getElementById('nav-close');
-const galleryImage = document.getElementById('gallery-img');
-const showImages = document.getElementById('show-gallery');
-const allImages = document.getElementById('all-images');
-const databaseMenu = document.getElementById('database-menu');
-const databaseSubMenu = document.getElementById('database-sub-menu');
+const navBtn = get('.nav-btn');
+const navbar = get('.navbar');
+const navClose = get('.nav-close');
+// const databaseMenu = get('database-menu');
+// const databaseSubMenu = get('database-sub-menu');
 
 // show nav
 navBtn.addEventListener('click', () => {
@@ -17,50 +15,49 @@ navClose.addEventListener('click', () => {
   navbar.classList.remove('showNav');
 });
 //setup date
-const date = (document.getElementById(
-  'date'
-).innerHTML = new Date().getFullYear());
-var loggedIn = false;
+const date = (get('#date').innerHTML = new Date().getFullYear());
 
-//slideshow
+//setup gallery
+const galleryContainer = get('.gallery-container');
+galleryContainer.addEventListener('click', (e) => {
+  //in case we click the previous button
+  const button = e.target.parentElement;
+  if (button.classList.contains('next-btn')) {
+    const active = get('.active');
+    let next = active.nextElementSibling;
+    const last = get('.last');
+    const nextTag = next.tagName;
+    if (nextTag === 'BUTTON') {
+      next = galleryContainer.firstElementChild;
+    }
 
-var slideIndex = 1;
-showSlides(slideIndex);
+    active.classList.remove('active');
+    next.classList.remove('next');
+    last.classList.remove('last');
 
-function plusSlides(n) {
-  showSlides((slideIndex += n));
-}
-
-function currentSlide(n) {
-  showSlides((slideIndex = n));
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName('mySlides');
-  var dots = document.getElementsByClassName('demo');
-  var captionText = document.getElementById('caption');
-  if (n > slides.length) {
-    slideIndex = 1;
+    next.classList.add('active');
+    active.classList.add('last');
+    last.classList.add('next');
   }
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = 'none';
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(' active', '');
-  }
-  slides[slideIndex - 1].style.display = 'block';
-  dots[slideIndex - 1].className += ' active';
-  captionText.innerHTML = dots[slideIndex - 1].alt;
-}
+  if (button.classList.contains('prev-btn')) {
+    const active = get('.active');
+    let last = get('.last');
+    let newLast = last.previousElementSibling;
 
-//gallery
+    if (!newLast) {
+      newLast = document.querySelectorAll('.gallery img')[4];
+    }
+    if (!last) {
+      last = document.querySelectorAll('.gallery img')[4];
+      newLast = last.previousElementSibling;
+    }
 
-function test() {
-  showImages.addEventListener('click', () => {
-    allImages.classList.toggle('hide-gallery');
-  });
-}
+    active.classList.remove('active');
+    last.classList.remove('last');
+    newLast.classList.remove('next');
+
+    last.classList.add('active');
+    active.classList.add('next');
+    newLast.classList.add('last');
+  }
+});

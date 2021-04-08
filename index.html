@@ -300,63 +300,17 @@
 
     <!-- gallery -->
     <section class="gallery">
-      <h2>Добиваме нашите продукти от екзотични локации като тези:</h2>
-        <div class="container">
-        <div class="mySlides">
-          <div class="numbertext">1 / 6</div>
-          <img src="./images/img_woods_wide.jpg" style="width: 100%" class="gallery-img"/>
-        </div>
-    
-        <div class="mySlides">
-          <div class="numbertext">2 / 6</div>
-          <img src="./images/img_5terre_wide.jpg" style="width: 100%" class="gallery-img"/>
-        </div>
-    
-        <div class="mySlides">
-          <div class="numbertext">3 / 6</div>
-          <img src="./images/img_mountains_wide.jpg" style="width: 100%" class="gallery-img"/>
-        </div>
-    
-        <div class="mySlides">
-          <div class="numbertext">4 / 6</div>
-          <img src="./images/img_lights_wide.jpg" style="width: 100%" class="gallery-img"/>
-        </div>
-    
-        <div class="mySlides">
-          <div class="numbertext">5 / 6</div>
-          <img src="./images/img_nature_wide.jpg" style="width: 100%" class="gallery-img"/>
-        </div>
-        <div class="mySlides">
-          <div class="numbertext">6 / 6</div>
-          <img src="./images/img_snow_wide.jpg" style="width: 100%" class="gallery-img"/>
+      <h2>При нас получавате само най-качествените продукти, от избрани локации:</h2>
+        <div class="gallery-container">
+          <img src="./images/jungle.jpg" class="last" alt="garden">
+          <img src="./images/cocktail.jpg"  class="active" alt="cocktail">
+          <img src="./images/garden.jpg" class="next" alt="garden">
+            <img src="./images/plant.jpg" class="next" alt="garden">
+            <img src="./images/fruits.jpg" class="next" alt="garden">
+          <button class="next-btn gallery-btn"><i class="fas fa-chevron-right"></i></button>
+          <button class="prev-btn gallery-btn"><i class="fas fa-chevron-left"></i></button>
         </div>
         
-        <a class="prev" onclick="plusSlides(-1)">❮</a>
-        <a class="next" onclick="plusSlides(1)">❯</a>
-      </div>
-
-      <div class="gallery-menu">
-      <div class="btn gallery-btn" id="show-gallery" onclick="test()">Покажи всички</div>
-      <div class="row hide-gallery" id="all-images">
-        <div class="column">
-          <img class="demo cursor" src="./images/img_woods.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-        </div>
-        <div class="column">
-          <img class="demo cursor" src="./images/img_5terre.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-        </div>
-        <div class="column">
-          <img class="demo cursor" src="./images/img_mountains.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-        </div>
-        <div class="column">
-          <img class="demo cursor" src="./images/img_lights.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-        </div>
-        <div class="column">
-          <img class="demo cursor" src="./images/img_nature.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-        </div>    
-        <div class="column">
-          <img class="demo cursor" src="./images/img_snow.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
-        </div>
-      </div>
     </section>
     <!-- end of gallery -->
 
@@ -470,6 +424,6 @@
       </div>
     </footer>
     <!-- custom js -->
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
   </body>
 </html>
