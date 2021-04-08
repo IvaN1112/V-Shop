@@ -43,12 +43,13 @@ galleryContainer.addEventListener('click', (e) => {
     const active = get('.active');
     let last = get('.last');
     let newLast = last.previousElementSibling;
+    const lastImage = document.querySelectorAll('.gallery img')[4];
 
     if (!newLast) {
-      newLast = document.querySelectorAll('.gallery img')[4];
+      newLast = lastImage;
     }
     if (!last) {
-      last = document.querySelectorAll('.gallery img')[4];
+      last = lastImage;
     }
 
     active.classList.remove('active');
