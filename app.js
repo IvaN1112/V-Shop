@@ -49,7 +49,6 @@ galleryContainer.addEventListener('click', (e) => {
     }
     if (!last) {
       last = document.querySelectorAll('.gallery img')[4];
-      newLast = last.previousElementSibling;
     }
 
     active.classList.remove('active');

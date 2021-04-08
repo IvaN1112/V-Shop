@@ -1077,6 +1077,7 @@ gallery slideshow
   background-color: rgb(113, 224, 141);
   border: 1px solid var(--clr-primary-light);
   border-radius: var(--radius);
+  box-shadow: 5px 10px rgba(113, 224, 141, 0.3);
   position: relative;
   transition: var(--transition);
   overflow: hidden;
